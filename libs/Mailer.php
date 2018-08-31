@@ -6,15 +6,15 @@ class Mailer{
 	public function ds_sendEmailNotification($to,$subject,$body){
 		$phpmailer = new PHPMailer;
 		$phpmailer->isSMTP();                    
-		$phpmailer->Host = 'mail.dev-ekodus.com';
+		$phpmailer->Host = 'XXXXXXXXXXXX';
 		//$phpmailer->SMTPDebug  = 2;
 		$phpmailer->SMTPAuth = true;
-		$phpmailer->Username = 'support@dev-ekodus.com';
-		$phpmailer->Password = 'Developer@123';
+		$phpmailer->Username = 'XXXXXX';
+		$phpmailer->Password = 'XXXXXXX';
 		//$phpmailer->SMTPSecure = 'tls';
-		$phpmailer->Port = 25;
-		$phpmailer->From = 'support@dev-ekodus.com';
-		$phpmailer->FromName = 'Ekodus';
+		$phpmailer->Port = XX;
+		$phpmailer->From = 'XXXXXXX';
+		$phpmailer->FromName = 'XXXXXX';
 		$phpmailer->addAddress($to);
 		$phpmailer->isHTML(true);
 		$phpmailer->Subject = $subject;
@@ -31,13 +31,13 @@ class Mailer{
 	public function ds_sendAutoReplyemail($to,$subject,$body){
 		$phpmailer = new PHPMailer;
 		$phpmailer->isSMTP();                    
-		$phpmailer->Host = 'mail.dev-ekodus.com';
+		$phpmailer->Host = 'XXXXXXXXXXXX';
 		$phpmailer->SMTPAuth = true;
-		$phpmailer->Username = 'support@dev-ekodus.com';
-		$phpmailer->Password = 'Developer@123';
-		$phpmailer->Port = 25;
-		$phpmailer->From = 'support@dev-ekodus.com';
-		$phpmailer->FromName = 'Ekodus';
+		$phpmailer->Username = 'XXXXXXXXXXXX';
+		$phpmailer->Password = 'XXXXXXXXXXXX';
+		$phpmailer->Port = XX;
+		$phpmailer->From = 'XXXXXXXXXXXX';
+		$phpmailer->FromName = 'XXXXXXXXXXXX';
 		$phpmailer->addAddress($to);
 		$phpmailer->isHTML(true);
 		$phpmailer->Subject = $subject;
