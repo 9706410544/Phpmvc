@@ -2,10 +2,10 @@
 //////////////////////////////////////////////////////////////////////
 //Paths can be defined here. Always add a trailing slash after path //
 //////////////////////////////////////////////////////////////////////
-define('URL','http://localhost/hrms/');
+define('URL','http://localhost/phpmvc/');
 define('DS_LIBS','libs/');
 define('DS_PUBLIC','public/');
-define('NOTIFY_EMAIL','debabratsharma00@gmail.com');
+define('NOTIFY_EMAIL','xxxxxxxxxx');
 ////////////////////////////////////////////
 // Constants defined for hashing password //
 ////////////////////////////////////////////
@@ -16,7 +16,7 @@ define('HASH_GEN_KEY','./developer#$%&*!key$%#()here');
 ////////////////////////////
 define('DB_TYPE','mysql');
 define('DB_HOST','localhost');
-define('DB_NAME','hrms');
+define('DB_NAME','phpmvc');
 define('DB_USER','root');
 define('DB_PASS','');
 ////////////////////////////////////////////////////
