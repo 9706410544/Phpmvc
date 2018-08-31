@@ -40,39 +40,5 @@ class Login extends Controller {
 	    	rmdir($dirPath);
 	    }
 	}
-	public function getB64Type($str) {
-    	return substr($str, 5, strpos($str, ';')-5);
-	}
-	public function globalUpload($post,$tableName,$folderName){
-		$autoId=$this->model->getAutoIncrementId($tableName);
-		$data=array();
-		$type=$this->getB64Type($post);
-		$imgType=explode("/",$type);
-		$base64img = str_replace('data:'.$type.';base64,', '', $post);
-    	$dataImg = base64_decode($base64img);
-    	$target_dir=DS_PUBLIC.'admin/images/'.$folderName.'/'.$autoId['data'].'/';
-    	if(!file_exists($target_dir)){
-            mkdir($target_dir, 0777, true);
-        }else{
-        	$this->deleteDirectory($target_dir);
-		    mkdir($target_dir, 0777, true);
-        }
-        $part2 = strtotime(date("Y-m-d H:i:s"));
-        $str= 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-        $part1= str_shuffle(substr(str_shuffle($str),0,8));
-        $target_file =$target_dir.$part1.$part2.'.'.$imgType[1];
-
-	    $data['portfolio']=$target_file;
-	    $success=file_put_contents($target_file, $dataImg);
-		if($success){
-			$response['msgType']=true;
-			$response['msg']='Portfolio photo uploaded!!!';
-			$response['data']=$target_file;
-		}else{
-			$response['msgType']=false;
-			$response['msg']='Photo couldn\'t be uploaded';
-		}
-		return $response;
-	}
 }
 ?>
